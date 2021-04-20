@@ -8,7 +8,6 @@ const ConceptContext = React.createContext();
 const ConceptProvider = ({ children }) => {
   const location = useLocation();
   const patientId = location.search.slice(1);
-  document.title = `Chart: Patient ${patientId}`;
   // const [conceptState, setConceptState] = React.useState(patientId);
 
   const demoApplicationConceptContextProviderValue = React.useMemo(() => ({

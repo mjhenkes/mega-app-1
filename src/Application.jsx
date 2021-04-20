@@ -16,7 +16,7 @@ const Application = () => {
 
   return (
     <ApplicationBase>
-      <ApplicationContainer applicationName={applicationContext.current.title} applicationVersion={applicationContext.current.version}>
+      <ApplicationContainer applicationName={applicationContext.current.title} applicationVersion={applicationContext.current.version} key={applicationContext.current.id}>
         <DemoApplication />
       </ApplicationContainer>
     </ApplicationBase>

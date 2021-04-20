@@ -3,12 +3,14 @@
     "id": "organizer",
     "title": "Organizer",
     "version": "0.0.0",
-    "route": "organizer"
+    "route": "organizer",
+    "requiresPatientContext": false
   },
   "chart": {
     "id": "chart",
     "title": "Chart",
     "version": "0.0.1",
-    "route": "chart"
+    "route": "chart",
+    "requiresPatientContext": true
   }
 }

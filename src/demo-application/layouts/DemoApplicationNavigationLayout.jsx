@@ -40,6 +40,19 @@ const DemoApplicationNavigationLayout = () => {
   const [showDetailsModal, setShowDetailsModal] = React.useState(false);
   const [showAppSwitcherModal, setShowAppSwitcherModal] = React.useState(false);
 
+  const render = () => {
+    if (applicationContext.current.requiresPatientContext && !conceptContext.data) {
+      return { children: <div> Choose a patient </div> };
+    }
+    return { renderLayout: () => LayoutMap[applicationContext.current.id] };
+  };
+
+  if (conceptContext.data) {
+    document.title = `${applicationContext.current.title}: ${conceptContext.data}`;
+  } else {
+    document.title = applicationContext.current.title;
+  }
+
   return (
     <>
       <ApplicationConceptProvider
@@ -100,7 +113,8 @@ const DemoApplicationNavigationLayout = () => {
             // activeNavigationKey={conceptContext.data ? navigationState : undefined}
             // onSelectNavigationItem={(key) => { setNavigationState(key); }}
             renderNavigationFallback={() => <div>404</div>}
-            renderLayout={() => LayoutMap[applicationContext.current.id]}
+            {...render()}
+
           />
         </ModalManager>
         {showDetailsModal && (

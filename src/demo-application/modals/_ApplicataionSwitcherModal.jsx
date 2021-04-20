@@ -30,6 +30,9 @@ const ApplicationSwitcherModal = ({ onRequestClose }) => {
             <Hyperlink
               href={`${hrefPrefix}${app.route}`}
               style={{ padding: '.5rem' }}
+              onClick={() => {
+                onRequestClose();
+              }}
             >
               {app.title}
             </Hyperlink>
