@@ -1,14 +1,20 @@
 import React from 'react';
+import {
+  useLocation,
+} from 'react-router-dom';
 
 const ConceptContext = React.createContext();
 
 const ConceptProvider = ({ children }) => {
-  const [conceptState, setConceptState] = React.useState('1');
+  const location = useLocation();
+  const patientId = location.search.slice(1);
+  document.title = `Chart: Patient ${patientId}`;
+  // const [conceptState, setConceptState] = React.useState(patientId);
 
   const demoApplicationConceptContextProviderValue = React.useMemo(() => ({
-    data: conceptState,
-    updateData: (newConcept) => { setConceptState(newConcept); },
-  }), [conceptState]);
+    data: patientId,
+    // updateData: (newConcept) => { setConceptState(newConcept); },
+  }), [patientId]);
 
   return (
     <ConceptContext.Provider value={demoApplicationConceptContextProviderValue}>

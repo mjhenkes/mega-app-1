@@ -5,6 +5,7 @@ import { dismissTransientPresentations } from '@cerner/terra-application/lib/uti
 import DemoApplicationNavigationLayout from './layouts/DemoApplicationNavigationLayout';
 import ConceptProvider from './providers/ConceptProvider';
 import SessionProvider from './providers/SessionProvider';
+import ApplicationProvider from './providers/ApplicationProvider';
 
 window.TEST_APP_TIMEOUT = 3000;
 
@@ -17,7 +18,9 @@ document.addEventListener('terra-application-demo.dismiss-transient-content', ()
 const DemoApplication = () => (
   <SessionProvider>
     <ConceptProvider>
-      <DemoApplicationNavigationLayout />
+      <ApplicationProvider>
+        <DemoApplicationNavigationLayout />
+      </ApplicationProvider>
     </ConceptProvider>
   </SessionProvider>
 );

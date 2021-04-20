@@ -1,0 +1,14 @@
+{
+  "organizer": {
+    "id": "organizer",
+    "title": "Organizer",
+    "version": "0.0.0",
+    "route": "organizer"
+  },
+  "chart": {
+    "id": "chart",
+    "title": "Chart",
+    "version": "0.0.1",
+    "route": "chart"
+  }
+}
