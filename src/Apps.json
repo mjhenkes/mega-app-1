@@ -17,24 +17,6 @@
       }
     ]
   },
-  "mySuperFunApp": {
-    "id": "mySuperFunApp",
-    "title": "My Super Fun App",
-    "version": "0.0.0",
-    "route": "mySuperFunApp",
-    "requiresPatientContext": false,
-    "pages": [
-      {
-        "navigationKey": "super-fun-1",
-        "label": "Super Fun 1",
-        "page": "TemplatePage"
-      }, {
-          "navigationKey": "super-fun-2",
-          "label": "Super Fun 2",
-          "page": "TemplatePage"
-      }
-    ]
-  },
   "chart": {
     "id": "chart",
     "title": "Chart",
