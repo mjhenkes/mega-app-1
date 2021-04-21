@@ -4,13 +4,69 @@
     "title": "Organizer",
     "version": "0.0.0",
     "route": "organizer",
-    "requiresPatientContext": false
+    "requiresPatientContext": false,
+    "pages": [
+      {
+        "navigationKey": "my-day",
+        "label": "My Day",
+        "page": "MyDay"
+      }, {
+          "navigationKey": "patient-search",
+          "label": "Patient Search",
+          "page": "PatientSearch"
+      }
+    ]
+  },
+  "mySuperFunApp": {
+    "id": "mySuperFunApp",
+    "title": "My Super Fun App",
+    "version": "0.0.0",
+    "route": "mySuperFunApp",
+    "requiresPatientContext": false,
+    "pages": [
+      {
+        "navigationKey": "super-fun-1",
+        "label": "Super Fun 1",
+        "page": "TemplatePage"
+      }, {
+          "navigationKey": "super-fun-2",
+          "label": "Super Fun 2",
+          "page": "TemplatePage"
+      }
+    ]
   },
   "chart": {
     "id": "chart",
     "title": "Chart",
     "version": "0.0.1",
     "route": "chart",
-    "requiresPatientContext": true
+    "requiresPatientContext": true,
+    "pages": [
+      {
+        "navigationKey": "chart-review",
+        "label": "Chart Review",
+        "page": "ChartReview"
+      }, {
+          "navigationKey": "handoff",
+          "label": "Handoff",
+          "page": "Handoff"
+      }, {
+        "navigationKey": "active-orders",
+        "label": "Active Orders",
+        "page": "ActiveOrders"
+      }, {
+        "navigationKey": "inactive-orders",
+        "label": "Inactive Orders",
+        "page": "InactiveOrders"
+      }, {
+        "navigationKey": "note-templates",
+        "label": "Note Templates",
+        "page": "NoteTemplates"
+      }, {
+        "navigationKey": "in-progress-notes",
+        "label": "In Progress Notes",
+        "page": "InProgressNotes"
+      }
+    ]
   }
 }

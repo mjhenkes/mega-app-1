@@ -32,12 +32,14 @@ const chartURL = '/mega-app-1/#/chart';
 const localChartURL = '/chart';
 
 const propTypes = {
+  label: PropTypes.string,
+  pageKey: PropTypes.string,
   onRequestClose: PropTypes.func,
 };
 
 // const page1MetaData = { data: 'page-1' };
 
-const PatientList = ({ onRequestClose }) => {
+const PatientList = ({ label, pageKey, onRequestClose }) => {
   const [showPage2, setShowPage2] = React.useState(false);
   const [showPageModal, setShowPageModal] = React.useState(false);
   const [isLoading, setIsLoading] = React.useState(false);
@@ -123,8 +125,8 @@ const PatientList = ({ onRequestClose }) => {
 
   return (
     <Page
-      pageKey="my-day"
-      label="My Day"
+      pageKey={pageKey}
+      label={label}
       metaData={metaData}
       // actions={pageActions}
       onRequestClose={onRequestClose}

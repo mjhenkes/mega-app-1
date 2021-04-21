@@ -30,7 +30,7 @@ const propTypes = {
 
 // const page1MetaData = { data: 'page-1' };
 
-const Page1 = ({ label, pageKey, onRequestClose }) => {
+const TemplatePage = ({ label, pageKey, onRequestClose }) => {
   const [showPage2, setShowPage2] = React.useState(false);
   const [showPageModal, setShowPageModal] = React.useState(false);
   const [isLoading, setIsLoading] = React.useState(false);
@@ -68,13 +68,28 @@ const Page1 = ({ label, pageKey, onRequestClose }) => {
       activityOverlay={isLoading ? <PageActivityOverlay variant="loading" /> : undefined}
     >
       <CardLayout>
-        <Card>
+        <Card label="Page 1 Details">
           <p>Page 1 demonstrates the following features:</p>
           <ul>
             <li>Page header action that presents a modal workflow</li>
             <li>Content that triggers Page APIs</li>
           </ul>
         </Card>
+        <Card label="Additional Page Disclosure">
+          <p>Page 1 presents Page 2 due changes to its local state.</p>
+          <Button text="Show Page 2" onClick={() => { setShowPage2(true); }} />
+        </Card>
+        <DynamicHeadingCard />
+        <NotificationBannersCard />
+        <NotificationDialogCard />
+        <LoadingOverlayCard onSetLoading={setIsLoading} />
+        <ErrorHandlingCard pageTitle="Page 1" />
+        <InteractionBlockingOverlayCard />
+        <PendingActionsCard />
+        <ModalManagerIntegrationCard />
+        <NavigationItemCard />
+        <ApplicationInfoCard />
+        <InputCard />
       </CardLayout>
       {showPage2
         && <Page2 onRequestClose={() => { setShowPage2(false); }} />}
@@ -84,6 +99,6 @@ const Page1 = ({ label, pageKey, onRequestClose }) => {
   );
 };
 
-Page1.propTypes = propTypes;
+TemplatePage.propTypes = propTypes;
 
-export default Page1;
+export default TemplatePage;

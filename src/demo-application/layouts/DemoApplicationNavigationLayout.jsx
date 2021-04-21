@@ -13,19 +13,9 @@ import { ConceptContext } from '../providers/ConceptProvider';
 import { ApplicationContext } from '../providers/ApplicationProvider';
 import ApplicationSwitcherModal from '../modals/_ApplicataionSwitcherModal';
 
-
-import OrganizerLayout from '../../organizer/layouts/OrganizerLayout';
-import ChartLayout from '../../chart/layouts/ChartLayout';
-
-import ConceptBanner from '../shared/ConceptBanner';
-import NotAPage from '../shared/NotAPage';
+import NavLayout from './NavCLayout';
 
 import styles from './DemoApplicationNavigationLayout.module.scss';
-
-const LayoutMap = {
-  organizer: <OrganizerLayout />,
-  chart: <ChartLayout />,
-};
 
 const cx = classNamesBind.bind(styles);
 
@@ -44,7 +34,7 @@ const DemoApplicationNavigationLayout = () => {
     if (applicationContext.current.requiresPatientContext && !conceptContext.data) {
       return { children: <div> Choose a patient </div> };
     }
-    return { renderLayout: () => LayoutMap[applicationContext.current.id] };
+    return { renderLayout: () => <NavLayout /> };
   };
 
   if (conceptContext.data) {
